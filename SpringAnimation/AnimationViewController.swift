@@ -28,7 +28,6 @@ final class AnimationViewController: UIViewController {
         delay:
         """
         label.numberOfLines = 5
-        
         return label
     }()
     
