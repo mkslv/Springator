@@ -10,19 +10,53 @@ import SpringAnimation
 
 final class AnimationViewController: UIViewController {
     // MARK: - Properties
-    let colorView: SpringView = {
-        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 4/5, height: UIScreen.main.bounds.height / 6)
-           return SpringView(frame: frame)
+    
+    private let colorView: SpringView = {
+        let view = SpringView(frame: CGRect(x: UIScreen.main.bounds.width / 10, y: UIScreen.main.bounds.height / 6, width: UIScreen.main.bounds.width * 8/10, height: UIScreen.main.bounds.height / 6))
+        view.backgroundColor = UIColor.systemGray // сделать градиент
+        view.layer.cornerRadius = 10
+        return view
     }()
-    let infoLabel = SpringLabel()
-    let aminationButton = SpringButton()
-    let verticalContainer = UIStackView()
+    
+    private let infoLabel: SpringLabel = {
+        let label = SpringLabel(frame: CGRect(x: UIScreen.main.bounds.width / 10, y: UIScreen.main.bounds.height * 2.25 / 6 , width: UIScreen.main.bounds.width * 8/10, height: UIScreen.main.bounds.height / 6))
+        label.text = """
+        preset:
+        curve:
+        force:
+        duration:
+        delay:
+        """
+        label.numberOfLines = 5
+        
+        return label
+    }()
+    
+    private let aminationButton: SpringButton = {
+        let button = SpringButton(frame: CGRect(
+            x: UIScreen.main.bounds.width / 10,
+            y: UIScreen.main.bounds.height - UIScreen.main.bounds.height / 5 ,
+            width: UIScreen.main.bounds.width * 8/10,
+            height: UIScreen.main.bounds.height / 15
+        ))
+        button.layer.cornerRadius = button.frame.height/2
+        button.setTitle("Animate", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.white.withAlphaComponent(0.5), for: .highlighted)
+        button.backgroundColor = .systemGray
+        button.addTarget(nil, action: #selector(buttonTapped), for: .touchUpInside)
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
 
+    @objc
+    func buttonTapped() {
+        print(#function)
+    }
 
 }
 
@@ -31,48 +65,16 @@ private extension AnimationViewController {
     func setupView() {
         view.backgroundColor = .systemBackground
         addSubviews()
-        setupContainer()
-        setupColorView()
-        setupLabel()
-        setupButton()
         
-        setupLayout()
+//        setupLayout()
     }
 }
 
 // MARK: - Settings
 private extension AnimationViewController {
     func addSubviews() {
-        [verticalContainer].forEach { subView in
-            view.addSubview(subView)
-        }
-    }
-    
-    func setupColorView() {
-        colorView.backgroundColor = UIColor.systemGray // сделать градиент
-        colorView.layer.cornerRadius = 5
-        
-    }
-    
-    func setupLabel() {
-        infoLabel.text = """
-        Some twxt
-        in few lanes
-        of label
-"""
-        infoLabel.numberOfLines = 0
-    }
-    
-    func setupButton() {
-        
-    }
-    
-    func setupContainer() {
-        verticalContainer.axis = .vertical
-        verticalContainer.distribution = .equalSpacing
-        
         [colorView, infoLabel, aminationButton].forEach { subView in
-            verticalContainer.addArrangedSubview(subView)
+            view.addSubview(subView)
         }
     }
 }
@@ -81,15 +83,6 @@ private extension AnimationViewController {
 // MARK: - Layout
 private extension AnimationViewController {
     func setupLayout() {
-        [verticalContainer].forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
-        
-        NSLayoutConstraint.activate([
-            verticalContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 3/4),
-            verticalContainer.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            verticalContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            verticalContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-        ])
+
     }
 }
