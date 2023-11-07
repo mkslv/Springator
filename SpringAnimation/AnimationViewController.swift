@@ -55,7 +55,12 @@ private extension AnimationViewController {
     }
     
     func setupLabel() {
-        infoLabel.text = "You are sexy"
+        infoLabel.text = """
+        Some twxt
+        in few lanes
+        of label
+"""
+        infoLabel.numberOfLines = 0
     }
     
     func setupButton() {
