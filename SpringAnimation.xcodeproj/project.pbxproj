@@ -13,8 +13,8 @@
 		51E315CA2AF9860900B0C386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51E315C92AF9860900B0C386 /* Assets.xcassets */; };
 		51E315CD2AF9860900B0C386 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E315CB2AF9860900B0C386 /* LaunchScreen.storyboard */; };
 		51E315D62AF9886D00B0C386 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 51E315D52AF9886D00B0C386 /* SpringAnimation */; };
-		51E315D82AF9A72E00B0C386 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E315D72AF9A72E00B0C386 /* ViewController.swift */; };
-		51E315DA2AF9A78200B0C386 /* Extension + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E315D92AF9A78200B0C386 /* Extension + UIButton.swift */; };
+		51E315DC2AFAF4F100B0C386 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E315DB2AFAF4F100B0C386 /* Animation.swift */; };
+		51E315DE2AFAFBA500B0C386 /* AnimationLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E315DD2AFAFBA500B0C386 /* AnimationLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +25,8 @@
 		51E315C92AF9860900B0C386 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51E315CC2AF9860900B0C386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51E315CE2AF9860900B0C386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51E315D72AF9A72E00B0C386 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		51E315D92AF9A78200B0C386 /* Extension + UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension + UIButton.swift"; sourceTree = "<group>"; };
+		51E315DB2AFAF4F100B0C386 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		51E315DD2AFAFBA500B0C386 /* AnimationLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 				51E315C02AF9860700B0C386 /* AppDelegate.swift */,
 				51E315C22AF9860700B0C386 /* SceneDelegate.swift */,
 				51E315C42AF9860700B0C386 /* AnimationViewController.swift */,
-				51E315D72AF9A72E00B0C386 /* ViewController.swift */,
-				51E315D92AF9A78200B0C386 /* Extension + UIButton.swift */,
+				51E315DD2AFAFBA500B0C386 /* AnimationLibrary.swift */,
+				51E315DB2AFAF4F100B0C386 /* Animation.swift */,
 				51E315C92AF9860900B0C386 /* Assets.xcassets */,
 				51E315CB2AF9860900B0C386 /* LaunchScreen.storyboard */,
 				51E315CE2AF9860900B0C386 /* Info.plist */,
@@ -149,9 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				51E315C52AF9860700B0C386 /* AnimationViewController.swift in Sources */,
-				51E315DA2AF9A78200B0C386 /* Extension + UIButton.swift in Sources */,
 				51E315C12AF9860700B0C386 /* AppDelegate.swift in Sources */,
-				51E315D82AF9A72E00B0C386 /* ViewController.swift in Sources */,
+				51E315DC2AFAF4F100B0C386 /* Animation.swift in Sources */,
+				51E315DE2AFAFBA500B0C386 /* AnimationLibrary.swift in Sources */,
 				51E315C32AF9860700B0C386 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,8 +301,7 @@
 				INFOPLIST_FILE = SpringAnimation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -332,8 +331,7 @@
 				INFOPLIST_FILE = SpringAnimation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
