@@ -15,7 +15,5 @@ final class AnimationLibrary {
     
     let presetList: Array<String> =  AnimationPreset.allCases.map { $0.rawValue }.shuffled()
     let curveList: Array<String> = AnimationCurve.allCases.map { $0.rawValue }.shuffled()
-    
-    
 }
 

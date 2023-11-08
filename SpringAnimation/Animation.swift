@@ -14,6 +14,8 @@ struct Animation {
     var delay: Double
     var duration: Double
     
+    
+    // FIXME: надо сделать метод который берет рандомные значения из Анимейшн лайбрари
     static func getValues() -> Animation {
         Animation(
             preset: "pop",
