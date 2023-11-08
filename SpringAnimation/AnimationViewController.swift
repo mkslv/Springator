@@ -24,7 +24,7 @@ final class AnimationViewController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        // here you can resize elements if rotation is on
+        // FIXME: DRY principles!
         colorView.frame = CGRect(
             x: UIScreen.main.bounds.width / 10,
             y: UIScreen.main.bounds.height / 6,
@@ -44,12 +44,10 @@ final class AnimationViewController: UIViewController {
             height: UIScreen.main.bounds.height / 15
         )
         aminationButton.layer.cornerRadius = aminationButton.frame.height/2
-        print(#function)
     }
 
     @objc
     func buttonTapped() {
-        print(#function)
         setupAnimationParams()
 
         colorView.animate()
@@ -61,7 +59,6 @@ final class AnimationViewController: UIViewController {
         infoLabel.animation = "zoomIn"
         infoLabel.animate()
     }
-
 }
 
 // MARK: - Setup View
@@ -84,7 +81,7 @@ private extension AnimationViewController {
 // MARK: - Layout and elements
 private extension AnimationViewController {
     func createColorView() -> SpringView {
-        let view = SpringView(frame: CGRect(
+        let view = SpringView(frame: CGRect(  // FIXME: DRY principles!
             x: UIScreen.main.bounds.width / 10,
             y: UIScreen.main.bounds.height / 6,
             width: UIScreen.main.bounds.width * 8/10,
@@ -96,7 +93,7 @@ private extension AnimationViewController {
     }
     
     func createInfoLabel() -> SpringLabel {
-        let label = SpringLabel(frame: CGRect(
+        let label = SpringLabel(frame: CGRect( // FIXME: DRY principles!
             x: UIScreen.main.bounds.width / 10,
             y: UIScreen.main.bounds.height * 2.25 / 6 ,
             width: UIScreen.main.bounds.width * 8/10,
@@ -127,7 +124,7 @@ private extension AnimationViewController {
     }
     
     func createAnimationButton() -> SpringButton {
-        let button = SpringButton(frame: CGRect(
+        let button = SpringButton(frame: CGRect( // FIXME: DRY principles!
             x: UIScreen.main.bounds.width / 10,
             y: UIScreen.main.bounds.height - UIScreen.main.bounds.height / 5 ,
             width: UIScreen.main.bounds.width * 8/10,
